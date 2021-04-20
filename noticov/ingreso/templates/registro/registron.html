@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<body>
+<form method = "POST">
+    <h1>registrar</h1>
+
+    {{form.as_p}}
+
+    <button class="btn btn-secondary">registrar</button>
+    {%csrf_token%}
+</form>
+</body>
+{% else %}
+<h1>no permitido para los usuarios comunes</h1>
+<div> </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}>
+<div class="container"></div>
+<h1> alcances de los diferentes articulos</h1>
+<ul>
+{% for tipo in alcances %}
+
+
+<li>noticias de alcance: <a href="alcance/{{tipo.id}}">{{tipo.alcance}}</a></li>
+
+{% endfor%}
+</ul>
+{% endblock %}

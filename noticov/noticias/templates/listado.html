@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}>
+<div class="container"></div>
+<h1> en este apartado podras encontrar la totalidad de articulos que logramos verificar</h1>
+
+<h1> </h1>
+{% for noticia in lista_noticias %}
+
+<div class="card">
+  <div class="card-header">
+    <strong>Alcance: </strong>{{noticia.alcance}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{noticia.titulo}}</h5>
+    <p class="card-text">{{noticia.fecha}}</p>
+    <p class="card-text"><strong>Resumen</strong>: {{noticia.resumen|slice:":475"}}......</p>
+
+    <a href="articulo/{{noticia.id}}" class="btn btn-primary">ir al articulo</a>
+  </div>
+</div>
+<h1> </h1>
+
+{% endfor%}
+
+{% endblock %}

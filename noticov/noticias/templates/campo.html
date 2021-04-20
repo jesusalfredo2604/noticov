@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}>
+<div class="container"></div>
+<h1> campos de los diferentes articulos</h1>
+<ul>
+{% for tipo in campos %}
+
+
+<li>articulos de: <a href="campo/{{tipo.id}}">{{tipo.nombre}}</a></li>
+
+{% endfor%}
+</ul>
+{% endblock %}

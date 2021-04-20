@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>detalle persona</h1>
+
+<div>id persona:{{persona.id}}</div>
+<div>id nombre:{{persona.nombre}}</div>
+<div>id apellido:{{persona.apellido}}</div>
+<div>id email:{{persona.email}}</div>
+<a href="{% url 'index' %}">regresar al inicio</a>
+    {% endblock %}

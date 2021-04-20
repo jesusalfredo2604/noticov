@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<h1>lista de los articulos que componen la base</h1>
+<div> </div>
+<a href="http://127.0.0.1:8000/nuevoart" class="btn btn-primary">agregar articulo</a>
+<a href="http://127.0.0.1:8000/nuevoautor" class="btn btn-primary">agregar autor</a>
+<a href="http://127.0.0.1:8000/nuevarevista" class="btn btn-primary">agregar revista</a>
+
+<ul>
+
+{% for resultado in todas %}
+<li>id: {{resultado.id}}, titulo: {{resultado.titulo}}
+   <div> </div>
+    <a href="http://127.0.0.1:8000/articulo/{{resultado.id}}" class="btn btn-primary">detalles</a>
+    <a href="http://127.0.0.1:8000/borrar/{{resultado.id}}" class="btn btn-primary">borrar</a>
+
+   <!-- <a href="http://127.0.0.1:8000/borrar/{{resultado.id}}" class="btn btn-primary">nariz</a -->
+
+</li>
+
+
+{% endfor%}</ul>
+{% else %}
+<h1>no permitido para los usuarios comunes</h1>
+<div> </div>
+        {% endif%}
+{% endblock %}

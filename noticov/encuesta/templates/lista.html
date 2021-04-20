@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}>
+<div class="container"></div>
+<h1> lista de encuestas</h1>
+
+{% if user.is_authenticated %}
+<ul>
+
+{% for encuesta in lista %}
+
+<li>id: {{encuesta.id}}, entidad: {{encuesta.entidad}}, estado: {{encuesta.vacunado}}, fecha: {{encuesta.fechav}} </li>
+
+{% endfor%}
+</ul>
+<a href="http://127.0.0.1:8000/encuesta/lista">exportar formato</a>
+{% else %}
+<h1>no permitido para los usuarios comunes</h1>
+<div> </div>
+{% endif%}
+
+{% endblock %}

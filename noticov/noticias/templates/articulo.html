@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ul>
+    <li><strong>titulo del articulo</strong> : {{articulo.titulo}}</li>
+    <li><strong>fecha del articulo</strong> : {{articulo.fecha}}</li>
+    <li><strong>campo del articulo</strong> : {{articulo.campo}}</li>
+    <li><strong>alcance del articulo</strong> : {{articulo.alcance}}</li>
+    <li><strong>autores del articulo</strong> :
+        {% for autor in articulo.autor.all %}
+        {{autor.nombre}} {{autor.apellido}},
+        {% endfor%}</li>
+    <li><strong>revista </strong>: {% for rev in articulo.revista.all%}
+        {{rev.nombre}},
+        {% endfor %} </li>
+    <li><strong>descripcion del articulo </strong>:<br> {{articulo.resumen}}</li>
+    <li><strong>link </strong>:<a class="nav-link" href="{{articulo.weblink}}">{{articulo.weblink}}</a></li>
+</ul>
+{% endblock %}
